@@ -1,0 +1,34 @@
+{
+  "name": "@luncheon/n-gram-n-repetend-search-index-tokenizer",
+  "version": "0.1.0",
+  "description": "",
+  "license": "GPL-3.0",
+  "repository": "luncheon/n-gram-n-repetend-search-index-tokenizer",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "prettier": {
+    "printWidth": 140,
+    "singleQuote": true,
+    "arrowParens": "avoid",
+    "trailingComma": "all",
+    "overrides": [
+      {
+        "files": [
+          "test.js"
+        ],
+        "options": {
+          "printWidth": 280
+        }
+      }
+    ]
+  },
+  "scripts": {
+    "clean": "node -e \"['index.d.ts','index.js'].forEach(f=>require('fs').rmSync(f,{force:true}))\"",
+    "build": "npm run clean && tsc -p .",
+    "test": "npm run build && node test.mjs"
+  },
+  "devDependencies": {
+    "prettier": "^2.6.1",
+    "typescript": "^4.6.3"
+  }
+}
